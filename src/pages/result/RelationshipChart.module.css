@@ -1,0 +1,311 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 64px;
+  width: 100%;
+}
+
+/* ── 페이지 헤더 ── */
+.pageHeader {
+  margin-bottom: -8px;
+}
+
+.pageTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-1);
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.pageDesc {
+  color: var(--text-3);
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+/* ── 섹션 레이블 ── */
+.sectionLabel {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 12px;
+}
+
+/* ── 내 별자리 카드 ── */
+.myCard {
+  background: var(--surface-2);
+  border: 1px solid;
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+}
+
+.myCardAccent {
+  height: 4px;
+  width: 100%;
+}
+
+.myCardBody {
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.myCardSu {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0 0 6px;
+}
+
+.myCardName {
+  color: var(--text-1);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 6px;
+  letter-spacing: -0.02em;
+}
+
+.myCardSub {
+  color: var(--text-3);
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.myCardKeywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+  max-width: 200px;
+}
+
+.kwTag {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 0.74rem;
+}
+
+/* ── 등급 섹션 ── */
+.gradeSection {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gradeHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.gradeIcon {
+  font-size: 1.1rem;
+}
+
+.gradeLabel {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.gradeCount {
+  color: var(--text-3);
+  font-size: 0.8rem;
+  margin-left: 2px;
+}
+
+/* ── 관계 카드 그리드 ── */
+.relGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ── 개별 관계 카드 ── */
+.relCard {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 12px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s, transform 0.13s;
+}
+
+.relCard:hover {
+  border-color: var(--grade-color);
+  background: var(--surface-3);
+  transform: translateY(-2px);
+}
+
+.relCardSelected {
+  border-color: var(--grade-color) !important;
+  background: var(--surface-3) !important;
+}
+
+.relGradeBadge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+
+.relCardName {
+  color: var(--text-1);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin: 0;
+  word-break: keep-all;
+  line-height: 1.3;
+}
+
+.relCardSu {
+  color: var(--sashin-color, var(--text-2));
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.relCardAnimal {
+  color: var(--text-3);
+  font-size: 0.66rem;
+  margin: 0;
+}
+
+/* ── 관계 상세 패널 ── */
+.detail {
+  background: var(--surface);
+  border: 1px solid;
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: slideDown 0.18s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.detailHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.detailGradeBadge {
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.detailTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+.detailMyName {
+  color: var(--text-1);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.detailArrow {
+  color: var(--text-3);
+  font-size: 1rem;
+}
+
+.detailOtherName {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.detailClose {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  color: var(--text-3);
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  transition: color 0.12s;
+}
+
+.detailClose:hover {
+  color: var(--text-2);
+}
+
+.detailMeta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.detailMetaItem {
+  color: var(--text-3);
+  font-size: 0.78rem;
+}
+
+.detailMetaItem strong {
+  color: var(--text-2);
+}
+
+.detailMetaItemGold {
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.detailDesc {
+  color: var(--text-1);
+  font-size: 0.9rem;
+  line-height: 1.85;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.detailOtherInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--text-3);
+  font-size: 0.76rem;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.dot {
+  color: var(--border);
+}

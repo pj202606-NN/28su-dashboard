@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; npm run dev)",
+      "PowerShell(cd \"d:\\\\대학\\\\4학년\\\\졸전\\\\28su-dashboard\"; \\(Select-String -Path \"src\\\\data\\\\28su_database_final.js\" -Pattern \"키워드:\" | Measure-Object\\).Count)",
+      "PowerShell($env:PATH = \"C:\\\\Program Files\\\\nodejs;\" + $env:PATH; Set-Location \"d:\\\\대학\\\\4학년\\\\졸전\\\\28su-dashboard\"; & node node_modules\\\\vite\\\\bin\\\\vite.js build 2>&1 | Select-Object -First 80)"
+    ]
+  }
+}

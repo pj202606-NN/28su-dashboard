@@ -1,0 +1,496 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 56px;
+  width: 100%;
+}
+
+/* ── 섹션 ── */
+.section {}
+
+.sectionTitle {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin: 0 0 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* ── 히어로 카드 (내 별자리) ── */
+.heroCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroAccentBar {
+  height: 3px;
+  width: 100%;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.heroBody {
+  padding: 32px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── 공통 카드 ── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── ① 별자리 헤더 ── */
+.mansionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.mansionSu {
+  color: var(--text-3);
+  font-size: 0.75rem;
+  margin: 0 0 8px;
+  letter-spacing: 0.06em;
+}
+
+.mansionName {
+  font-family: 'Noto Serif KR', serif;
+  color: var(--text-1);
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin: 0 0 10px;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+}
+
+.birthDateLabel {
+  color: var(--text-3);
+  font-size: 0.75rem;
+  margin: 0;
+}
+
+.sashinBadge {
+  flex-shrink: 0;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sashinName {
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.infoLabel {
+  color: var(--text-3);
+  font-size: 0.68rem;
+  letter-spacing: 0.05em;
+}
+
+.infoValue {
+  color: var(--text-1);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.kwTag {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+}
+
+.hwangdoBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-left: 2px solid var(--gold);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  margin-top: 4px;
+}
+
+.hwangdoLabel {
+  color: var(--text-3);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.hwangdoNote {
+  color: var(--text-3);
+  font-size: 0.78rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.hwangdoNote strong {
+  color: var(--text-2);
+  font-weight: 600;
+}
+
+/* ── ② 운세 섹션 ── */
+.tabs {
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  padding: 3px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+}
+
+.tab {
+  flex: 1;
+  padding: 9px 0;
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  color: var(--text-3);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab:hover {
+  background: var(--surface-2);
+  color: var(--text-2);
+}
+
+.tabActive {
+  background: var(--surface-2);
+  color: var(--text-1);
+  font-weight: 600;
+}
+
+.categories {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.catBtn {
+  padding: 6px 16px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-3);
+  font-size: 0.80rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.catBtn:hover {
+  border-color: var(--text-2);
+  color: var(--text-2);
+}
+
+.catActive {
+  background: var(--surface-2);
+  border-color: var(--gold);
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.fortuneHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fortuneGrade {
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 2px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.fortuneRelation {
+  color: var(--text-3);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.fortuneText {
+  color: var(--text-1);
+  font-size: 0.88rem;
+  line-height: 1.9;
+  margin: 0;
+  word-break: keep-all;
+}
+
+.fortuneDetail {
+  color: var(--text-2);
+  font-size: 0.85rem;
+  line-height: 1.9;
+  margin: 0;
+  word-break: keep-all;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+}
+
+.detailToggleBtn {
+  align-self: flex-start;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-3);
+  font-size: 0.75rem;
+  padding: 4px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+  margin-top: 4px;
+}
+
+.detailToggleBtn:hover {
+  border-color: var(--text-2);
+  color: var(--text-2);
+}
+
+/* ── 분석 탭 ── */
+.analysisSections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.analysisCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.analysisSectionLabel {
+  color: var(--gold);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.analysisText {
+  color: var(--text-1);
+  font-size: 0.87rem;
+  line-height: 1.9;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* ── ③ 행운 정보 ── */
+.luckyGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.luckyCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.luckyCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  flex-shrink: 0;
+}
+
+.luckyCompass {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.luckyDayBubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.luckyPlanetBubble {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.luckyLabel {
+  color: var(--text-3);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.luckyValue {
+  color: var(--text-1);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+/* ── ④ 역사 인물 ── */
+.figuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.figureCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.figureName {
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.figureTitle {
+  color: var(--text-3);
+  font-size: 0.74rem;
+  margin: 0;
+}
+
+.figureBirth {
+  color: var(--text-3);
+  font-size: 0.72rem;
+  margin: 0;
+}
+
+.figureDesc {
+  color: var(--text-2);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  margin: 8px 0 0;
+  word-break: keep-all;
+}
+
+.emptyMsg {
+  color: var(--text-3);
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 900px) {
+  .infoGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .heroBody {
+    padding: 22px 20px;
+  }
+  .mansionName {
+    font-size: 1.7rem;
+  }
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .luckyGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 360px) {
+  .luckyGrid {
+    grid-template-columns: 1fr;
+  }
+  .figuresGrid {
+    grid-template-columns: 1fr;
+  }
+}

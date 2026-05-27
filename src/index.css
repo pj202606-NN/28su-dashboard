@@ -1,0 +1,154 @@
+/* ═══════════════════════════════════════════════════════════════
+   28수 별자리 운세 — 글로벌 CSS 변수 & 기본 스타일
+   테마: dark (기본·청록) / light (웜 오프화이트) / deep (차콜·먹색)
+═══════════════════════════════════════════════════════════════ */
+
+/* ── 기본 테마 (다크 네이비·슬레이트) ─────────────────────────── */
+:root,
+[data-theme="dark"] {
+  --bg:          #0F1820;
+  --surface:     #162230;
+  --surface-2:   #1D2D3C;
+  --surface-3:   #233548;
+  --border:      rgba(255, 255, 255, 0.09);
+  --border-sub:  rgba(255, 255, 255, 0.04);
+
+  --text-1:      #DCE4E8;
+  --text-2:      #7890A0;
+  --text-3:      #4A6070;
+
+  --accent:      #0E9080;
+  --accent-h:    #18A090;
+  --accent-dim:  rgba(14, 144, 128, 0.14);
+  --accent-glow: rgba(14, 144, 128, 0.04);
+
+  --gold:        #DFCD9D;
+  --gold-h:      #EBD9A9;
+  --gold-dim:    rgba(223, 205, 157, 0.14);
+
+  --sidebar-w:   240px;
+  --radius:      10px;
+  --radius-sm:   6px;
+
+  --c-mok:  #5A8860;
+  --c-hwa:  #9A5050;
+  --c-to:   #908060;
+  --c-geum: #8098A8;
+  --c-su:   #4878A0;
+}
+
+/* ── 라이트 모드 (화이트·쿨톤 모노톤) ─────────────────────────── */
+[data-theme="light"] {
+  --bg:          #F8F8F8;
+  --surface:     #FFFFFF;
+  --surface-2:   #F2F3F4;
+  --surface-3:   #E8EAEC;
+  --border:      rgba(0, 0, 0, 0.10);
+  --border-sub:  rgba(0, 0, 0, 0.05);
+
+  --text-1:      #1A1A1C;
+  --text-2:      #5A6068;
+  --text-3:      #8A9098;
+
+  --accent:      #2A7870;
+  --accent-h:    #347E78;
+  --accent-dim:  rgba(42, 120, 112, 0.10);
+  --accent-glow: rgba(42, 120, 112, 0.03);
+
+  --gold:        #5A4E46;
+  --gold-h:      #685A50;
+  --gold-dim:    rgba(90, 78, 70, 0.12);
+
+  --c-mok:  #3A5A3A;
+  --c-hwa:  #6A3838;
+  --c-to:   #6A5A48;
+  --c-geum: #4A6868;
+  --c-su:   #2A4868;
+}
+
+/* ── 다크 모드 (차콜·먹색) ─────────────────────────────────────── */
+[data-theme="deep"] {
+  --bg:          #0D0D0D;
+  --surface:     #1A1A1A;
+  --surface-2:   #242424;
+  --surface-3:   #2C2C2C;
+  --border:      rgba(51, 51, 51, 0.90);
+  --border-sub:  rgba(51, 51, 51, 0.50);
+
+  --text-1:      #E0DDD8;
+  --text-2:      #888480;
+  --text-3:      #555250;
+
+  --accent:      #4A7A72;
+  --accent-h:    #5A8A82;
+  --accent-dim:  rgba(74, 122, 114, 0.14);
+  --accent-glow: rgba(74, 122, 114, 0.03);
+
+  --gold:        #A89880;
+  --gold-h:      #B8A890;
+  --gold-dim:    rgba(168, 152, 128, 0.14);
+
+  --c-mok:  #4A7850;
+  --c-hwa:  #7A4848;
+  --c-to:   #7A7040;
+  --c-geum: #607878;
+  --c-su:   #3A6888;
+}
+
+/* ── 리셋 & 기본 ────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Pretendard Variable', Pretendard,
+    -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-1);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background 0.25s, color 0.25s;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.serif {
+  font-family: 'Noto Serif KR', serif;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  color: var(--text-1);
+}
+
+p {
+  margin: 0;
+}
+
+button, select, input {
+  font-family: inherit;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-3);
+}

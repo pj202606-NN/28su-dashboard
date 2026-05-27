@@ -1,0 +1,189 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  padding: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gold);
+  opacity: 0.7;
+}
+
+/* ── 브랜드 마크 ── */
+.brandMark {
+  font-family: 'Noto Serif KR', serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  opacity: 0.85;
+}
+
+.title {
+  font-family: 'Noto Serif KR', serif;
+  color: var(--text-1);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.headerTexts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.catchphrase {
+  font-family: 'Noto Serif KR', serif;
+  color: var(--text-2);
+  font-size: 0.95rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+}
+
+.subtitle {
+  color: var(--text-3);
+  font-size: 0.78rem;
+  margin: 0;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* ── 양력/음력 토글 ── */
+.toggleRow {
+  display: flex;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 4px;
+  gap: 4px;
+}
+
+.toggleBtn {
+  padding: 8px 28px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 0.92rem;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.toggleBtn.active {
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+/* ── 입력 폼 ── */
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  color: var(--text-2);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.select {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-1);
+  font-size: 0.92rem;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8070' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color 0.15s;
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+
+.select option {
+  background: var(--surface);
+  color: var(--text-1);
+}
+
+/* ── 에러 ── */
+.error {
+  color: #e07f7f;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+/* ── 제출 버튼 ── */
+.submitBtn {
+  width: 100%;
+  padding: 14px;
+  background: var(--gold);
+  color: var(--bg);
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.15s, transform 0.1s;
+  margin-top: 8px;
+}
+
+.submitBtn:hover {
+  background: var(--gold-h);
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 36px 22px;
+  }
+  .toggleBtn {
+    padding: 8px 20px;
+  }
+}

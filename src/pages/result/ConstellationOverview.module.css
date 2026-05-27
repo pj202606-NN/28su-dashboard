@@ -1,0 +1,381 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-bottom: 64px;
+  width: 100%;
+}
+
+/* ── 페이지 헤더 ── */
+.pageHeader {
+  margin-bottom: -16px;
+}
+
+.pageTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-1);
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.pageDesc {
+  color: var(--text-3);
+  font-size: 0.78rem;
+  margin: 0;
+  letter-spacing: 0.04em;
+}
+
+/* ── 사신 그룹 ── */
+.group {}
+
+.groupHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.groupIcon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.groupTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 3px;
+  letter-spacing: 0.03em;
+}
+
+.groupSub {
+  color: var(--text-3);
+  font-size: 0.72rem;
+  margin: 0;
+}
+
+/* ── 카드 그리드 ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 8px;
+}
+
+/* ── 개별 카드 ── */
+.card {
+  position: relative;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.15s;
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: var(--gold);
+  background: var(--surface-2);
+}
+
+.cardAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+}
+
+.cardSu {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin: 0;
+  margin-top: 4px;
+}
+
+.cardName {
+  color: var(--text-1);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 0;
+  word-break: keep-all;
+  line-height: 1.3;
+}
+
+.cardAnimal {
+  color: var(--text-3);
+  font-size: 0.68rem;
+  margin: 0;
+}
+
+.cardDate {
+  color: var(--text-3);
+  font-size: 0.65rem;
+  margin: 0;
+}
+
+.cardKeywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+/* ── 카드 관측 정보 ── */
+.cardObs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 2px;
+  padding-top: 5px;
+  border-top: 1px solid var(--border);
+  width: 100%;
+}
+
+.cardObsItem {
+  color: var(--text-3);
+  font-size: 0.60rem;
+}
+
+/* ── 공통 키워드 태그 ── */
+.kwTagSm {
+  background: transparent;
+  color: var(--text-3);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 6px;
+  font-size: 0.60rem;
+}
+
+.kwTag {
+  background: transparent;
+  color: var(--text-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+}
+
+/* ── 모달 오버레이 ── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 20px;
+}
+
+/* ── 모달 본체 ── */
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 88vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid;
+}
+
+.modalSu {
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+  letter-spacing: 0.04em;
+}
+
+.modalName {
+  color: var(--text-1);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 5px;
+  letter-spacing: -0.01em;
+}
+
+.modalDate {
+  color: var(--text-3);
+  font-size: 0.72rem;
+  margin: 0;
+}
+
+.modalSashinBadge {
+  flex-shrink: 0;
+  border: 1px solid;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.modalSashinIcon {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.modalGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 12px;
+}
+
+.modalGridItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.modalGridLabel {
+  color: var(--text-3);
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.modalGridValue {
+  color: var(--text-1);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.modalKeywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.modalBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modalBlockLabel {
+  color: var(--text-3);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.modalBlockText {
+  color: var(--text-2);
+  font-size: 0.83rem;
+  line-height: 1.8;
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* ── 모달 관측 정보 ── */
+.obsGrid {
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.obsGridItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.obsGradeTip {
+  color: var(--text-3);
+  font-size: 0.68rem;
+  font-weight: 400;
+}
+
+.obsWarning {
+  display: inline-block;
+  margin-top: 4px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-dim);
+  color: var(--gold);
+  font-size: 0.68rem;
+  border-radius: 4px;
+  padding: 2px 8px;
+  width: fit-content;
+}
+
+/* ── 모달 행운 정보 ── */
+.modalLucky {
+  display: flex;
+  gap: 20px;
+}
+
+.modalLuckyItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.luckyCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.luckyCompass {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ── 닫기 버튼 ── */
+.closeBtn {
+  align-self: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 32px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.closeBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
