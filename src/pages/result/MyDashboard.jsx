@@ -23,13 +23,13 @@ const FORTUNE_TABS       = ['오늘', '이달', '올해', '분석'];
 const FORTUNE_CATEGORIES = ['종합', '연애', '직업', '재물'];
 const ANALYSIS_LABELS    = { 본질: '본질', 강점: '강점', 관계스타일: '관계 스타일', 주의점: '주의점' };
 
-// Jan 1, 2000 (UTC) = 계유일(癸酉日). 天干 오행: 계→수 (idx 9)
-// 검증: Jan 27, 2000 + 26일 = idx 5 → 기→토 (기해일) ✓
+// Jan 1, 1900 = 갑술(甲戌)일, 天干 갑 = index 0
+// 검증: 2003-12-18 → 37971일 → idx 1 → 을(乙) → 목(木) ✓
 function calcIlganOhaeng(solarYear, solarMonth, solarDay) {
-  const ref   = Date.UTC(2000, 0, 1);
+  const ref   = Date.UTC(1900, 0, 1);
   const birth = Date.UTC(solarYear, solarMonth - 1, solarDay);
   const days  = Math.round((birth - ref) / 86400000);
-  const idx   = ((days % 10) + 9 + 10) % 10;
+  const idx   = ((days % 10) + 10) % 10;
   return ['목','목','화','화','토','토','금','금','수','수'][idx];
 }
 
