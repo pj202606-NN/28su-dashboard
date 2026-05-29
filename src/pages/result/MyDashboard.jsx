@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useOutletContext, Navigate } from 'react-router-dom';
 import { calcBirthMansion, getZodiacSign } from '../../utils/mansionCalculator';
-import { generateAllFortunes } from '../../data/28su_fortune_v5';
+import { generateAllFortunes } from '../../data/28su_fortune_v6';
 import { getYearInfo } from '../../data/28su_moon_calc';
 import { MANSION_DATES } from '../../data/28su_dates_v3';
 import { MANSION_KEYWORDS } from '../../data/28su_keywords_v2';
