@@ -93,6 +93,29 @@
   background: var(--surface-2);
 }
 
+.cardMine {
+  border-color: var(--gold);
+  background: var(--gold-dim);
+}
+
+.cardMine:hover {
+  background: var(--gold-dim);
+}
+
+.cardMineBadge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: var(--gold);
+  color: var(--bg);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 6px;
+  border-radius: 3px;
+  line-height: 1.4;
+}
+
 .cardAccent {
   position: absolute;
   top: 0;

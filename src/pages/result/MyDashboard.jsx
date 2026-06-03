@@ -93,7 +93,7 @@ function MansionCard({ mansion, state: s }) {
         </div>
 
         <div>
-          <p className={styles.infoLabel} style={{ marginBottom: 8 }}>키워드</p>
+          <p className={styles.infoLabel} style={{ marginBottom: 8 }}>성향 키워드</p>
           <div className={styles.keywords}>
             {mansion.키워드.map(kw => (
               <span key={kw} className={styles.kwTag}>{kw}</span>

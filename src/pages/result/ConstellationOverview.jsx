@@ -1,7 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import { MANSIONS, SASHIN } from '../../data/28su_database_final';
 import { MANSION_DATES } from '../../data/28su_dates_v3';
 import { MANSION_OBS } from '../../data/28su_obs_data';
+import { calcBirthMansion } from '../../utils/mansionCalculator';
 import styles from './ConstellationOverview.module.css';
 
 const SASHIN_ORDER = ['동방청룡', '북방현무', '서방백호', '남방주작'];
@@ -149,12 +151,16 @@ function MansionModal({ mansion, onClose }) {
 
 // ── 카드 ──────────────────────────────────────────────────────────
 
-function MansionCard({ mansion, onClick }) {
+function MansionCard({ mansion, onClick, isMine }) {
   const color = SASHIN_COLOR[mansion.사신];
   const obs   = OBS_MAP[mansion.id];
   return (
-    <button className={styles.card} onClick={() => onClick(mansion)}>
-      <div className={styles.cardAccent} style={{ backgroundColor: color, opacity: 0.6 }} />
+    <button
+      className={`${styles.card} ${isMine ? styles.cardMine : ''}`}
+      onClick={() => onClick(mansion)}
+    >
+      <div className={styles.cardAccent} style={{ backgroundColor: color, opacity: isMine ? 1 : 0.6 }} />
+      {isMine && <span className={styles.cardMineBadge}>내 별자리</span>}
       <p className={styles.cardSu} style={{ color }}>{mansion.수}</p>
       <p className={styles.cardName}>{mansion.별자리명}</p>
       <p className={styles.cardAnimal}>{mansion.상징동물}</p>
@@ -179,6 +185,11 @@ function MansionCard({ mansion, onClick }) {
 function ConstellationOverview() {
   const [selected, setSelected] = useState(null);
   const handleClose = useCallback(() => setSelected(null), []);
+
+  const userData = useOutletContext();
+  const myMansionId = userData
+    ? calcBirthMansion(userData.solarYear, userData.solarMonth, userData.solarDay, userData.hour)?.id ?? null
+    : null;
 
   const grouped = SASHIN_ORDER.map(sashin => ({
     sashin,
@@ -207,7 +218,7 @@ function ConstellationOverview() {
             </div>
             <div className={styles.grid}>
               {mansions.map(m => (
-                <MansionCard key={m.id} mansion={m} onClick={setSelected} />
+                <MansionCard key={m.id} mansion={m} onClick={setSelected} isMine={m.id === myMansionId} />
               ))}
             </div>
           </section>
