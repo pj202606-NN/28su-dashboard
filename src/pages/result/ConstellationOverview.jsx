@@ -36,6 +36,34 @@ function formatDateRange(id) {
   return `${d.시작.월}/${d.시작.일} ~ ${d.종료.월}/${d.종료.일}`;
 }
 
+// 겉보기 등급 → 밝기 레벨 (0~5)
+function getMagLevel(mag) {
+  if (mag < 1) return 5;
+  if (mag < 2) return 4;
+  if (mag < 3) return 3;
+  if (mag < 4) return 2;
+  if (mag < 5) return 1;
+  return 0;
+}
+
+function MagnitudeDots({ magnitude }) {
+  const level = getMagLevel(magnitude);
+  return (
+    <div className={styles.magBar}>
+      <span className={styles.magEndLabel}>어두움</span>
+      <div className={styles.magDots}>
+        {[1, 2, 3, 4, 5].map(i => (
+          <span
+            key={i}
+            className={`${styles.magDot} ${i <= level ? styles.magDotOn : ''}`}
+          />
+        ))}
+      </div>
+      <span className={styles.magEndLabel}>밝음</span>
+    </div>
+  );
+}
+
 // ── 모달 ─────────────────────────────────────────────────────────
 
 function MansionModal({ mansion, onClose }) {
@@ -108,10 +136,8 @@ function MansionModal({ mansion, onClose }) {
             <div className={styles.obsGrid}>
               <div className={styles.obsGridItem}>
                 <span className={styles.modalGridLabel}>겉보기 등급</span>
-                <span className={styles.modalGridValue}>
-                  {obs.겉보기등급}등급
-                  <span className={styles.obsGradeTip}> (수가 작을수록 밝음)</span>
-                </span>
+                <span className={styles.modalGridValue}>{obs.겉보기등급}등급</span>
+                <MagnitudeDots magnitude={obs.겉보기등급} />
                 {obs.겉보기등급 >= 5 && (
                   <span className={styles.obsWarning}>맨눈 관측이 어렵습니다</span>
                 )}
