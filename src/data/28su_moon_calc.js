@@ -57,7 +57,7 @@ export function getMoonOhaeng(mansionData) {
 
 /**
  * 이달 월주 오행 계산 (절기 기반)
- * 28su_saju_table.js의 MONTH_JIQI 활용
+ * (28su_saju_table_off.js의 MONTH_JIQI를 JIQI_BOUNDS로 옮겨옴 — 해당 파일은 미사용)
  * @param {Date} date
  * @returns {string} 오행
  */
